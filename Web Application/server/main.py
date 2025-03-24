@@ -1,9 +1,12 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Body
+from Modules.symptom_detection import get_symptom_analysis
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+
+
 
 app = FastAPI()
 
-# Configure CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],
@@ -12,8 +15,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-
 @app.get("/")
-def main():
-    return "Hello world"
+async def main():
+    return {"message": "Hello world"}
+
+@app.get('/symptoms')
+def symptom_check(request):
+    
+        analysis = get_symptom_analysis(request)
+        print(analysis)
+        return analysis
+    

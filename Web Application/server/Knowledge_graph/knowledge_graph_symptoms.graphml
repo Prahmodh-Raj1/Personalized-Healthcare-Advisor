@@ -1,0 +1,352 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d1" for="edge" attr.name="title" attr.type="string"/>
+<key id="d0" for="edge" attr.name="label" attr.type="string"/>
+<graph edgedefault="undirected"><node id="Fungal infection"/>
+<node id="Dischromic patches"/>
+<node id="Skin rash"/>
+<node id="Itching"/>
+<node id="Nodal skin eruptions"/>
+<node id="Drug reaction"/>
+<node id="Allergy"/>
+<node id="Chronic cholestasis"/>
+<node id="Peptic ulcer disease"/>
+<node id="Jaundice"/>
+<node id="Malaria"/>
+<node id="Chickenpox"/>
+<node id="Liver disease"/>
+<node id="Watering from eyes"/>
+<node id="Shivering"/>
+<node id="Chills"/>
+<node id="Continuous sneezing"/>
+<node id="Watering\_from\_eyes"/>
+<node id="Continuous\_sneezing"/>
+<node id="Gerd"/>
+<node id="Dengue"/>
+<node id="Typhoid"/>
+<node id="Tuberculosis"/>
+<node id="Common cold"/>
+<node id="Pneumonia"/>
+<node id="Chest pain"/>
+<node id="Vomiting"/>
+<node id="Ulcers on tongue"/>
+<node id="Acidity"/>
+<node id="Stomach pain"/>
+<node id="Cough"/>
+<node id="Chest\_pain"/>
+<node id="Ulcers\_on\_tongue"/>
+<node id="Stomach\_pain"/>
+<node id="Gastroenteritis"/>
+<node id="Bronchial asthma"/>
+<node id="Paralysis"/>
+<node id="Paralysis (brain hemorrhage"/>
+<node id="Brain hemorrhage"/>
+<node id="Alcoholic hepatitis"/>
+<node id="Heart attack"/>
+<node id="Hypothyroidism"/>
+<node id="Hypoglycemia"/>
+<node id="Vertigo"/>
+<node id="Migraine"/>
+<node id="Cervical spondylosis"/>
+<node id="Dimorphic hemmorhoids"/>
+<node id="Loss of appetite"/>
+<edge source="Fungal infection" target="Dischromic patches">
+  <data key="d0">Has symptoms</data>
+  <data key="d1">Has symptoms</data>
+</edge>
+<edge source="Fungal infection" target="Skin rash">
+  <data key="d0">Has symptoms</data>
+  <data key="d1">Has symptoms</data>
+</edge>
+<edge source="Fungal infection" target="Itching">
+  <data key="d0">Has symptoms</data>
+  <data key="d1">Has symptoms</data>
+</edge>
+<edge source="Fungal infection" target="Nodal skin eruptions">
+  <data key="d0">Has symptoms</data>
+  <data key="d1">Has symptoms</data>
+</edge>
+<edge source="Skin rash" target="Drug reaction">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Itching" target="Allergy">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Itching" target="Chronic cholestasis">
+  <data key="d0">Has symptoms</data>
+  <data key="d1">Has symptoms</data>
+</edge>
+<edge source="Itching" target="Drug reaction">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Itching" target="Peptic ulcer disease">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Itching" target="Jaundice">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Itching" target="Malaria">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Itching" target="Chickenpox">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Itching" target="Liver disease">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Drug reaction" target="Cough">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Allergy" target="Watering from eyes">
+  <data key="d0">Has symptoms</data>
+  <data key="d1">Has symptoms</data>
+</edge>
+<edge source="Allergy" target="Shivering">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Allergy" target="Chills">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Allergy" target="Continuous sneezing">
+  <data key="d0">Has symptoms</data>
+  <data key="d1">Has symptoms</data>
+</edge>
+<edge source="Allergy" target="Watering\_from\_eyes">
+  <data key="d0">Has symptom</data>
+  <data key="d1">Has symptom</data>
+</edge>
+<edge source="Allergy" target="Continuous\_sneezing">
+  <data key="d0">Has symptom</data>
+  <data key="d1">Has symptom</data>
+</edge>
+<edge source="Chronic cholestasis" target="Shivering">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Chronic cholestasis" target="Vomiting">
+  <data key="d0">Has symptoms</data>
+  <data key="d1">Has symptoms</data>
+</edge>
+<edge source="Chronic cholestasis" target="Loss of appetite">
+  <data key="d0">Has symptoms</data>
+  <data key="d1">Has symptoms</data>
+</edge>
+<edge source="Peptic ulcer disease" target="Vomiting">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Peptic ulcer disease" target="Ulcers on tongue">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Peptic ulcer disease" target="Acidity">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Peptic ulcer disease" target="Stomach pain">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Peptic ulcer disease" target="Cough">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Jaundice" target="Vomiting">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Jaundice" target="Cough">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Malaria" target="Chills">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Malaria" target="Vomiting">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Shivering" target="Gerd">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Chills" target="Gerd">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Chills" target="Dengue">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Chills" target="Typhoid">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Chills" target="Tuberculosis">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Chills" target="Common cold">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Chills" target="Pneumonia">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Gerd" target="Chest pain">
+  <data key="d0">Has symptoms</data>
+  <data key="d1">Has symptoms</data>
+</edge>
+<edge source="Gerd" target="Vomiting">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Gerd" target="Ulcers on tongue">
+  <data key="d0">Has symptoms</data>
+  <data key="d1">Has symptoms</data>
+</edge>
+<edge source="Gerd" target="Acidity">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Gerd" target="Stomach pain">
+  <data key="d0">Has symptoms</data>
+  <data key="d1">Has symptoms</data>
+</edge>
+<edge source="Gerd" target="Cough">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Gerd" target="Chest\_pain">
+  <data key="d0">Has symptom</data>
+  <data key="d1">Has symptom</data>
+</edge>
+<edge source="Gerd" target="Ulcers\_on\_tongue">
+  <data key="d0">Has symptom</data>
+  <data key="d1">Has symptom</data>
+</edge>
+<edge source="Gerd" target="Stomach\_pain">
+  <data key="d0">Has symptom</data>
+  <data key="d1">Has symptom</data>
+</edge>
+<edge source="Dengue" target="Vomiting">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Typhoid" target="Vomiting">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Tuberculosis" target="Chest pain">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Tuberculosis" target="Vomiting">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Tuberculosis" target="Cough">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Common cold" target="Chest pain">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Common cold" target="Vomiting">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Common cold" target="Cough">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Pneumonia" target="Chest pain">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Pneumonia" target="Cough">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Vomiting" target="Gastroenteritis">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Vomiting" target="Bronchial asthma">
+  <data key="d0">Is a symptom of</data>
+  <data key="d1">Is a symptom of</data>
+</edge>
+<edge source="Vomiting" target="Paralysis">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Vomiting" target="Paralysis (brain hemorrhage">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Vomiting" target="Brain hemorrhage">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Vomiting" target="Alcoholic hepatitis">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Vomiting" target="Heart attack">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Vomiting" target="Hypothyroidism">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Vomiting" target="Hypoglycemia">
+  <data key="d0">Is a symptom of</data>
+  <data key="d1">Is a symptom of</data>
+</edge>
+<edge source="Vomiting" target="Vertigo">
+  <data key="d0">Is a symptom of</data>
+  <data key="d1">Is a symptom of</data>
+</edge>
+<edge source="Acidity" target="Stomach\_pain">
+  <data key="d0">Causes</data>
+  <data key="d1">Causes</data>
+</edge>
+<edge source="Acidity" target="Migraine">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Cough" target="Bronchial asthma">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Cough" target="Cervical spondylosis">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Cough" target="Paralysis (brain hemorrhage">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Cough" target="Dimorphic hemmorhoids">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+<edge source="Cough" target="Heart attack">
+  <data key="d0">Is symptom of</data>
+  <data key="d1">Is symptom of</data>
+</edge>
+</graph></graphml>
