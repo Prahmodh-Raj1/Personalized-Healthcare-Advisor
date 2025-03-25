@@ -29,8 +29,7 @@ def initialize_symptom_detector():
         graph_str_list.append(f"{edge}\n")
 
     knowledge_graph_text = "".join(graph_str_list)
-    print(knowledge_graph_text)
-
+    
     agent = Agent(
         model=Gemini(id="gemini-2.0-flash"),
         tools=[TavilyTools()],
