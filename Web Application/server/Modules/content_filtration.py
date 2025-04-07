@@ -13,7 +13,7 @@ def filter_medical_response(response):
         description="AI Agent to filter out content for better understanding",
         instructions=[
             "Filter out the content provided in the given query, understand it and provide a concise point-by-point response of the query.",
-            "Display only the important information in the given query"
+            "Display only the important information in the given query. Remove any asterisks, and provide proper spacing between the points, leave a line after every sentence and display the points in bulletins in Order. And display only the answer"
         ],
         markdown=True
     )

@@ -73,4 +73,6 @@ async def lifestyle(request : LifeStyleGuidanceRequest):
         return filtered_lifestyle_guidance
     except Exception as e:
         return {"error": str(e)}
+
+
         
