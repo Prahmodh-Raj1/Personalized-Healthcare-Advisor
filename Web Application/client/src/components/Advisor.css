@@ -10,11 +10,26 @@
 
 .logo {
   font-size: 2.5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  
   color: #333;
+  text-align: center;
+}
+
+.logo-container {
+  margin: 0.5rem 0 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.app-logo {
+  width: 80px;  /* Reduced size */
+  height: 80px;
+  object-fit: contain;
 }
 
 .search-box {
+  margin-top: 1rem;
   width: 80%;
   max-width: 800px;
   position: relative;
@@ -123,13 +138,43 @@
   
   .result-section {
     background: white;
+    position: relative;
     padding: 20px;
+    padding-bottom: 60px; /* Space for the button */
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     margin-bottom: 20px;
     opacity: 0;
     animation: slideIn 0.5s ease-out forwards;
+  }
+  
+  .next-step-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .next-step-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .return-symbol {
+    font-size: 1rem;
+    font-weight: bold;
   }
   
   .result-section h3 {
@@ -176,4 +221,25 @@
       transform: translateY(0);
     }
   }
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #4CAF50;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
   

@@ -1,20 +1,24 @@
+//@ts-nocheck
 import React, { useState } from "react";
 import "./Advisor.css";
 import { FaArrowUp } from "react-icons/fa";
+ // Add this import at the top
 
 const Advisor: React.FC = () => {
   const [inputd, setInput] = useState("");
+
   
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [symptom_analysis, setSymptomAnalysis] = useState("");
-  // Removed unused state variable medical_guidance
   const [medical_guidance, setMedicalGuidance] = useState("");
   const [lifestyle_recommendations, setLifestyleRecommendations] = useState("");
 
+  const [isLoadingAnalysis, setIsLoadingAnalysis] = useState(false);
+  const [isLoadingGuidance, setIsLoadingGuidance] = useState(false);
+  const [isLoadingLifestyle, setIsLoadingLifestyle] = useState(false);
+
   const handleSubmit = async () => {
     if (!inputd.trim()) return;
-    
-    
+    setIsLoadingAnalysis(true);
     try {
       console.log("Making post request")
       const response = await fetch('http://localhost:8000/symptoms', {
@@ -34,17 +38,19 @@ const Advisor: React.FC = () => {
       setSymptomAnalysis(data);
     } catch (error) {
       console.error('Error:', error);
-      // Optionally show error to user
-    } 
+    } finally {
+      setIsLoadingAnalysis(false);
+    }
   };
 
-  const handleGuidance = async()=>{
-    if(!symptom_analysis.trim()){
+  const handleGuidance = async () => {
+    if (!symptom_analysis.trim()) {
       return;
     }
-    try{
+    setIsLoadingGuidance(true);
+    try {
       console.log("Issuing request for medical guidance")
-      const response = await fetch('http://localhost:8000/med_guidance',{
+      const response = await fetch('http://localhost:8000/med_guidance', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -56,9 +62,10 @@ const Advisor: React.FC = () => {
       }
       const data = await response.json();
       setMedicalGuidance(data);
-
-    }catch(error){
-      console.error('Error:', error); 
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+      setIsLoadingGuidance(false);
     }
   };
 
@@ -66,6 +73,7 @@ const Advisor: React.FC = () => {
     if (!medical_guidance.trim()) {
       return;
     }
+    setIsLoadingLifestyle(true);
     try {
       console.log("Requesting lifestyle recommendations");
       const response = await fetch('http://localhost:8000/lifestyle', {
@@ -85,14 +93,19 @@ const Advisor: React.FC = () => {
       setLifestyleRecommendations(data);
     } catch (error) {
       console.error('Error:', error);
+    } finally {
+      setIsLoadingLifestyle(false);
     }
   };
 
   return (
     <div className="health-advisor-container">
-      <h1 className="logo">Health_Advisor</h1>
-      <div className="search-box">
-        <input 
+      <h1 className="logo">AI-Powered Wellness Insight System</h1>
+      
+      
+      
+    <div className="search-box">
+      <input 
           type="text" 
           value={inputd}
           onChange={(e) => setInput(e.target.value)}
@@ -104,28 +117,60 @@ const Advisor: React.FC = () => {
         </button>
       </div>
       <div className="results-container">
-        {symptom_analysis && (
+        {(symptom_analysis || isLoadingAnalysis) && (
           <div className="result-section">
-            <h3>Analysis</h3>
-            <p>{symptom_analysis}</p>
-            <button className="guidance-btn" onClick={handleGuidance}>
-              Get Medical Guidance?
-            </button>
+            <h3>Symptom Analysis</h3>
+            {isLoadingAnalysis ? (
+              <div className="loader-container">
+                <div className="loader"></div>
+              </div>            ) : (
+              <>
+                
+                  <p>{symptom_analysis}</p>
+ 
+                {symptom_analysis && !isLoadingAnalysis && (
+                  <button className="next-step-btn" onClick={handleGuidance}>
+                    Get Medical Guidance? <span className="return-symbol">↵</span>
+                  </button>
+                )}
+              </>
+            )}
           </div>
         )}
-        {medical_guidance && (
+        
+        
+        {(medical_guidance || isLoadingGuidance) && (
           <div className="result-section">
-            <h3>Medical Guidance</h3>
-            <p>{medical_guidance}</p>
-            <button className="guidance-btn" onClick={handleLifestyle}>
-              Get Lifestyle Recs?
-            </button>
+            <h3>Personalised Medical Guidance</h3>
+            {isLoadingGuidance ? (
+              <div className="loader-container">
+                <div className="loader"></div>
+              </div>
+            ) :  (
+              <>
+              <p>{medical_guidance}</p>
+              {medical_guidance && !isLoadingGuidance && (
+                <button className="next-step-btn" onClick={handleLifestyle}>
+            Get Lifestyle Recs? <span className="return-symbol">↵</span>
+          </button>
+              )}
+              </>
+            )}
+            
           </div>
         )}
-        {lifestyle_recommendations && (
+        
+        
+        {(lifestyle_recommendations || isLoadingLifestyle) && (
           <div className="result-section">
             <h3>Lifestyle Recommendations</h3>
-            <p>{lifestyle_recommendations}</p>
+            {isLoadingLifestyle ? (
+              <div className="loader-container">
+                <div className="loader"></div>
+              </div>
+            ) : (
+              <p>{lifestyle_recommendations}</p>
+            )}
           </div>
         )}
       </div>
@@ -134,30 +179,3 @@ const Advisor: React.FC = () => {
 };
 
 export default Advisor;
-
-/*
-
-{(results.analysis || results.guidance || results.lifestyle) && (
-        <div className="results-container">
-          {results.analysis && (
-            <div className="result-section">
-              <h3>Analysis</h3>
-              <p>{results.analysis}</p>
-            </div>
-          )}
-          {results.guidance && (
-            <div className="result-section">
-              <h3>Medical Guidance</h3>
-              <p>{results.guidance}</p>
-            </div>
-          )}
-          {results.lifestyle && (
-            <div className="result-section">
-              <h3>Lifestyle Recommendations</h3>
-              <p>{results.lifestyle}</p>
-            </div>
-          )}
-        </div>
-      )}
-
-      */
