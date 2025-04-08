@@ -98,7 +98,7 @@ def initialize_symptom_detector():
             "When given symptoms, follow these steps:",
             "1. Identify possible medical conditions based on the Knowledge Graph.",
             "2. Use Tavily to retrieve recommended actions (e.g., tests, treatments, or doctor consultations).",
-            "3. Generate a concise response of 3-4 sentences combining both aspects, ensuring clarity in about 2-3 sentences. Display only the list of detailed top 4-5 Possible Diseases that these symptoms might cause, and do not include any recommendation",
+            "3. Generate a brief response of 5-6 sentences combining both aspects. Display only the list of detailed top 4-5 Possible Diseases that these symptoms might cause, and do not include any recommendation",
             f"Here is the structured medical Knowledge Graph data you should use:\n\n{knowledge_graph_text}\n\nUse this knowledge before making any diagnoses."
         ],
         markdown=True

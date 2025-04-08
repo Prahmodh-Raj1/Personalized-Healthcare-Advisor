@@ -1,6 +1,6 @@
-from fastapi import FastAPI, Body
+from fastapi import FastAPI, HTTPException
 from Modules.symptom_detection import get_symptom_analysis
-from Modules.lifestyle_care import get_lifestyle_recommendations
+from Modules.lifestyle_recs import get_lifestyle_recommendations
 from Modules.content_filtration import filter_medical_response
 from request_models import SymptomRequest, MedGuidanceRequest, LifeStyleGuidanceRequest
 from fastapi.middleware.cors import CORSMiddleware
@@ -46,6 +46,10 @@ async def main():
 @app.post('/symptoms')
 async def symptom_check(request: SymptomRequest):
     try:
+        # Check for empty symptoms
+        if not request.symptoms or request.symptoms == "":
+            raise HTTPException(status_code=400, detail="Symptoms must not be empty.")
+        
         analysis = get_symptom_analysis(request.symptoms)
         filtered_analysis = filter_medical_response(analysis)
         return filtered_analysis
@@ -55,6 +59,9 @@ async def symptom_check(request: SymptomRequest):
 @app.post('/med_guidance')
 async def med_guidance(request : MedGuidanceRequest):
     try:
+        
+        if not request.analysis.strip():
+            raise HTTPException(status_code=400, detail="Analysis must not be empty.")
         req_guidance = request.analysis + ". How do I cure these diseases mentioned?"
         guidance = get_medical_guidance(knowledge_base, req_guidance)
         filtered_guidance = filter_medical_response(guidance)
@@ -65,14 +72,22 @@ async def med_guidance(request : MedGuidanceRequest):
 
 @app.post('/lifestyle')
 async def lifestyle(request : LifeStyleGuidanceRequest):
-    try:
-        filtered_req = request.analysis + request.guidance
+     try:
+        if not request.analysis or not request.guidance:
+            raise HTTPException(status_code=400, detail="Both analysis and guidance must be provided")
+            
+        filtered_req = f"Medical Analysis: {request.analysis}\nTreatment Guidance: {request.guidance}"
+        
+        # Await the coroutine
         lifestyle_guidance = get_lifestyle_recommendations(filtered_req)
+        
+        
+        if not lifestyle_guidance:
+            raise HTTPException(status_code=500, detail="Failed to generate recommendations")
+            
         filtered_lifestyle_guidance = filter_medical_response(lifestyle_guidance)
-        
         return filtered_lifestyle_guidance
-    except Exception as e:
-        return {"error": str(e)}
-
-
-        
+     except ValueError as ve:
+        raise HTTPException(status_code=400, detail=str(ve))
+     except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

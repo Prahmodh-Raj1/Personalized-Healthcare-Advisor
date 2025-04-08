@@ -18,7 +18,7 @@ def initialize_lifestyle_agent():
     GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
     
     agent = Agent(
-        model=Gemini(id="gemini-1.5-flash"),
+        model=Gemini(id="gemini-2.0-flash"),
         tools=[TavilyTools()],
         description="An AI-powered lifestyle and preventive care advisor for long-term health management.",
        instructions=[
@@ -38,7 +38,7 @@ def initialize_lifestyle_agent():
     )
     return agent
 
-async def get_lifestyle_recommendations(diagnosis_and_treatment: str):
+def get_lifestyle_recommendations(diagnosis_and_treatment):
     """
     Generate personalized lifestyle and preventive care recommendations
     
@@ -49,8 +49,5 @@ async def get_lifestyle_recommendations(diagnosis_and_treatment: str):
         str: Comprehensive lifestyle and preventive care recommendations
     """
     agent = initialize_lifestyle_agent()
-    print(agent)
-    response = agent.run(diagnosis_and_treatment)
-    if not response or not response.content:
-        raise ValueError("Failed to generate lifestyle recommendations")
+    response : RunResponse = agent.run(diagnosis_and_treatment)
     return response.content
