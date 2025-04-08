@@ -19,5 +19,9 @@
 
   },
   "include": ["src", "**/*.cy.ts","cypress.d.ts"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [
+    { 
+      "path": "./tsconfig.app.json"},
+    { "path": "./tsconfig.node.json" }
+  ]
 }
